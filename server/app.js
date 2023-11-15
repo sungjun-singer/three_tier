@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
-const mysql = require('mysql');
+// const mysql = require('mysql');
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -10,26 +10,26 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}))
 app.use(cors());
 
-const connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '1234',
-    database : 'test'
-});
+// const connection = mysql.createConnection({
+//     host     : 'localhost',
+//     user     : 'root',
+//     password : '1234',
+//     database : 'test'
+// });
 
-connection.connect();
+// connection.connect();
  
-connection.query('SELECT * FROM user', function (error, results, fields) {
-  if (error) throw error;
-  console.log(results);
-});
+// connection.query('SELECT * FROM user', function (error, results, fields) {
+//   if (error) throw error;
+//   console.log(results);
+// });
  
-// connection.query("INSERT INTO test.user(userid, username) values ('민준', '코딩맨')", function(error, results, fields) {
-//     if(error) throw error;
-//     console.log(results);
-// })
+// // connection.query("INSERT INTO test.user(userid, username) values ('민준', '코딩맨')", function(error, results, fields) {
+// //     if(error) throw error;
+// //     console.log(results);
+// // })
 
-connection.end();
+// connection.end();
 
 
 const todoList = [
